@@ -29,3 +29,4 @@ load10X = function(dataDirs,channelNames=NULL,...){
   }
   channels = SoupChannelList(channels)
   return(channels)
+}
