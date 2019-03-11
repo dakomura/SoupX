@@ -19,9 +19,9 @@ load10X = function(dataDirs,channelNames=NULL,...){
     #Get reference
     ref = "ref"
     #Load the 10X data
-    tod = Read10X(file.path(dataDir,'raw_gene_bc_matrix')) #remove ref
+    tod = Read10X(file.path(dataDir,'raw_feature_bc_matrix')) #remove ref
     #Get the barcodes that cell ranger considers to contain cells
-    cells = read.delim(gzfile(file.path(dataDir,'filtered_gene_bc_matrix','barcodes.tsv.gz')),sep='\t',header=FALSE) #Unzip the compressed barcode file
+    cells = read.delim(gzfile(file.path(dataDir,'filtered_feature_bc_matrix','barcodes.tsv.gz')),sep='\t',header=FALSE) #Unzip the compressed barcode file
     cells = gsub('-1','',cells[,1])
     #Get the index in the big table
     cellIdxs = match(cells,colnames(tod))
